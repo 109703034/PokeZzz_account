@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pokemon Sleep Account</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .account {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="account">
+        <h2>我的帳號：</h2>
+        <p id="myAccount">6333-0347-0874</p>
+        <button onclick="copyToClipboard('myAccount')">複製</button>
+    </div>
+    <div class="account">
+        <h2>我男友的帳號：</h2>
+        <p id="bfAccount">6464-1637-1585</p>
+        <button onclick="copyToClipboard('bfAccount')">複製</button>
+    </div>
+
+    <script>
+        function copyToClipboard(id) {
+            var range = document.createRange();
+            range.selectNode(document.getElementById(id));
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            document.execCommand("copy");
+            alert("帳號已複製到剪貼簿！");
+        }
+    </script>
+</body>
+</html>
